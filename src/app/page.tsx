@@ -24,10 +24,9 @@ export default function Home() {
   const [didOtherUserDisconnect, setDidOtherUserDisconnect] = useState(false);
 
   const [isTyping, setIsTyping] = useState(false);
-
   const handleStart = () => {
     setDidOtherUserDisconnect(false);
-    const s = io("http://localhost:3000");
+    const s = io(process.env.HOST as string);
 
     s.on("connect", () => {
       console.log("connect");

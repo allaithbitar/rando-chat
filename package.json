@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "HOST=http://localhost:3000 && nodemon server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js && next start",
+    "start": "NODE_ENV=production HOST=https://main--rando-chat.netlify.app &&  node server.js && next start",
     "lint": "next lint"
   },
   "dependencies": {
