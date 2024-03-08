@@ -26,7 +26,9 @@ export default function Home() {
   const [isTyping, setIsTyping] = useState(false);
   const handleStart = () => {
     setDidOtherUserDisconnect(false);
-    const s = io(process.env.HOST as string);
+    const s = io(process.env.HOST as string, {
+      transports: ["websocket"],
+    });
 
     s.on("connect", () => {
       console.log("connect");
